@@ -16,10 +16,6 @@ public class AuthInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request , HttpServletResponse response , Object handler) throws Exception {
-        final String requestURI = request.getRequestURI();
-
-
-
         final HttpSession session = request.getSession();
         final Boolean isAuth = (Boolean) session.getAttribute("isAuth");
 
@@ -28,7 +24,7 @@ public class AuthInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        request.getRequestDispatcher("/unLogin").forward(request , response);
+        response.sendRedirect("/login");
         return false;
     }
 

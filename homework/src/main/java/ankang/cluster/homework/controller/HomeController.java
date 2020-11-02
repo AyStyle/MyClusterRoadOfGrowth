@@ -47,12 +47,10 @@ public class HomeController {
      *
      * @return
      */
-    @RequestMapping(value = "/unLogin")
-    public ModelAndView unLogin() {
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView login() {
         final ModelAndView modelAndView = new ModelAndView();
-
         modelAndView.setViewName("login");
-
         return modelAndView;
     }
 
