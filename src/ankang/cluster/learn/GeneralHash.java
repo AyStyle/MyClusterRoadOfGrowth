@@ -2,6 +2,7 @@ package ankang.cluster.learn;
 
 /**
  * 普通hash算法的实现
+ *
  * @author: ankang
  * @email: dreedisgood@qq.com
  * @create: 2020-10-26

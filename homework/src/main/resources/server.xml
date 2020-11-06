@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Server port="8005" shutdown="SHUTDOWN">
-  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
-  <Listener className="org.apache.catalina.security.SecurityListener" />
-  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
-  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
-  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
-  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+    <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
+    <Listener className="org.apache.catalina.security.SecurityListener"/>
+    <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on"/>
+    <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
+    <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+    <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
 
-  <GlobalNamingResources>
-    <Resource name="UserDatabase" auth="Container"
-              type="org.apache.catalina.UserDatabase"
-              description="User database that can be updated and saved"
-              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
-              pathname="conf/tomcat-users.xml" />
-  </GlobalNamingResources>
+    <GlobalNamingResources>
+        <Resource name="UserDatabase" auth="Container"
+                  type="org.apache.catalina.UserDatabase"
+                  description="User database that can be updated and saved"
+                  factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+                  pathname="conf/tomcat-users.xml"/>
+    </GlobalNamingResources>
 
 
-  <Service name='project1'>
-    <Connector port='9090' protocol='HTTP/1.1'/>
+    <Service name='project1'>
+        <Connector port='9090' protocol='HTTP/1.1'/>
 
-    <Engine name='homework-project1' defaultHost='localhost'>
-      <Host name='localhost' appBase='webapps' unpackWARs='false' autoDeploy='false'>
-        <Context path='/' docBase='/Users/ankang/Applications/apache-tomcat-9.0.39/webapps/project1/project.war'/>
-      </Host>
-    </Engine> 
-  </Service>
+        <Engine name='homework-project1' defaultHost='localhost'>
+            <Host name='localhost' appBase='webapps' unpackWARs='false' autoDeploy='false'>
+                <Context path='/' docBase='/Users/ankang/Applications/apache-tomcat-9.0.39/webapps/project1/project.war'/>
+            </Host>
+        </Engine>
+    </Service>
 
-  <Service name='project2'>
-    <Connector port='9091' protocol='HTTP/1.1'/>
+    <Service name='project2'>
+        <Connector port='9091' protocol='HTTP/1.1'/>
 
-    <Engine name='homework-project2' defaultHost='localhost'>
-      <Host name='localhost' appBase='webapps' unpackWARs='false' autoDeploy='false'>
-        <Context path='/' docBase='/Users/ankang/Applications/apache-tomcat-9.0.39/webapps/project2/project.war' />
-      </Host>
-    </Engine> 
-  </Service>
+        <Engine name='homework-project2' defaultHost='localhost'>
+            <Host name='localhost' appBase='webapps' unpackWARs='false' autoDeploy='false'>
+                <Context path='/' docBase='/Users/ankang/Applications/apache-tomcat-9.0.39/webapps/project2/project.war'/>
+            </Host>
+        </Engine>
+    </Service>
 </Server>

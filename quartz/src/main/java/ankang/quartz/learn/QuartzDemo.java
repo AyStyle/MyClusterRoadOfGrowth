@@ -21,12 +21,13 @@ public class QuartzDemo {
         final Trigger trigger = createTrigger();
 
         // 4.使用任务调度器根据时间触发器执行任务
-        scheduler.scheduleJob(job, trigger);
+        scheduler.scheduleJob(job , trigger);
         scheduler.start();
     }
 
     /**
      * 1.创建爱你任务调度器
+     *
      * @return
      */
     private static Scheduler createScheduler() throws SchedulerException {
@@ -35,19 +36,21 @@ public class QuartzDemo {
 
         return scheduler;
     }
+
     /**
      * 2.创建一个任务
      */
-    private static JobDetail createJob(){
-      return JobBuilder.newJob(DemoJob.class).withIdentity("ankang","group").build();
+    private static JobDetail createJob() {
+        return JobBuilder.newJob(DemoJob.class).withIdentity("ankang" , "group").build();
     }
 
     /**
      * 3.创建任务一个触发器
+     *
      * @return
      */
-    private static Trigger createTrigger(){
-        final CronTrigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger","group")
+    private static Trigger createTrigger() {
+        final CronTrigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger" , "group")
                 .startNow()
                 .withSchedule(CronScheduleBuilder.cronSchedule("*/2 * * * * ?"))
                 .build();
@@ -55,7 +58,7 @@ public class QuartzDemo {
         return trigger;
     }
 
-    public static class DemoJob implements Job{
+    public static class DemoJob implements Job {
 
         @Override
         public void execute(JobExecutionContext context) throws JobExecutionException {
